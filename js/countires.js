@@ -5,7 +5,7 @@ const loadCountries = () => {
 };
 
 const displayCountries = (countries) => {
-  console.log(countries[0]);
+  //   console.log(countries[0]);
   const countriesHTML = countries.map((country) => getCountryHTML(country));
   const container = document.getElementById("countries");
   container.innerHTML = countriesHTML.join(" ");
@@ -30,11 +30,13 @@ const displayCountries = (countries) => {
 //     `;
 // };
 
-const getCountryHTML = ({ name, flags }) => {
+const getCountryHTML = ({ name, flags, area, region }) => {
   // option 3: parameter destructuring
   return `
           <div class="country">
               <h2>${name.common}</h2>
+              <p>Area: ${area}</p>
+              <p>Continent: ${region}</p>
               <img src="${flags.png}">
           </div>
       `;
